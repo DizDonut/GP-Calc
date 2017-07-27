@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GP & Markup Calc</title>
+
+    <!-- Bootstrap - Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- link to jquery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+    <!-- link to stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+  </head>
+  <body>
+    <div class="jumbotron"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Enter Annual Salary</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <input class="form-control" type="number" min="15000" max="250000" step="2500" placeholder="Annual Salary..." id="sal-input">
+                </div> <!-- end form group for salary input-->
+                <div class="form-group">
+                  <input class="form-control" type="number" min="0.50" max="10.00" step="0.50" placeholder="Enter Markup as a Decimal..." id="sal-mrkUp">
+                </div> <!-- end form group for salary markup input -->
+                <div class="form-group">
+                  <input class="form-control" type="number" min="0" max="40.00" step="0.50" placeholder="Weekly Hours..." id="weekly-hours-input1">
+                </div> <!-- end form group for weekly hours input -->
+                <button class="btn btn-primary" id="sal-submit" type="submit">Submit</button>
+              </form> <!-- end form within panel-body -->
+            </div> <!-- end sal-input panel-body -->
+          </div> <!-- end sal-input panel default -->
+        </div> <!-- end first column -->
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Enter Hourly Rate</div>
+            <div class="panel-body">
+              <form>
+                <div class="form-group">
+                  <input class="form-control" type="number" min="8.00" max="45.00" step="0.25" placeholder="Hourly Rate..." id="hour-input">
+                </div> <!-- end form group for hourly rate input-->
+                <div class="form-group">
+                  <input class="form-control" type="number" min="0.50" max="10.00" step="0.01" placeholder="Enter Markup as a Decimal..." id="hour-mrkUp">
+                </div> <!-- end form group for hourly markup input -->
+                <div class="form-group">
+                  <input class="form-control" type="number" min="0" max="40.00" step="0.50" placeholder="Weekly Hours..." id="weekly-hours-input2">
+                </div> <!-- end form group for weekly hours input -->
+                <button class="btn btn-primary" id="hour-submit" type="submit">Submit</button>
+              </form> <!-- end form within panel-body -->
+            </div> <!-- end hour-input panel-body -->
+          </div> <!-- end hour-input panel default -->
+        </div> <!-- end second column -->
+      </div> <!-- end first row -->
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Bill Rate:</div>
+              <div id="sal-br-goes-here" class="panel-body"></div>
+            <div class="panel-heading">Hourly Pay Rate:</div>
+              <div id="sal-hr" class="panel-body"></div>
+          </div> <!-- end panel display -->
+        </div> <!-- end first column on second row -->
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Bill Rate:</div>
+              <div id="hr-br-goes-here" class="panel-body"></div>
+            <div class="panel-heading">Annual Salary:</div>
+              <div id="hr-sal" class="panel-body"></div>
+          </div> <!-- end panel display -->
+        </div> <!-- end second column on second row -->
+      </div> <!-- end second row -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">Estimated GM & GM%</div>
+              <div class="panel-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Pay Rate</th>
+                      <th>Bill Rate</th>
+                      <th>Average Hours/Week</th>
+                      <th>Estimated Gross Profit $</th>
+                      <th>Estimated Gross Profit %</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sheet">
+                  </tbody> <!-- end table body -->
+                </table> <!-- end table -->
+              </div> <!-- end panel body for table -->
+          </div> <!-- end panel for table -->
+        </div> <!-- end column for table -->
+      </div> <!-- end third row -->
+
+    </div> <!-- end container -->
+
+    <!-- link to js file -->
+    <script type="text/javascript" src="assets/javascript/gpCalc.js"></script>
+  </body>
+</html>
